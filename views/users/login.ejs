@@ -1,0 +1,46 @@
+
+<br><br>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <p class="text-danger"><%= typeof error != "undefined" ? error[0] : ""%></p>
+
+            <form action="/users/login" method="post">
+
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" name="password" class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="submit" value="Login"  class="btn btn-primary">
+                    <a href="/users/forgotForm">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
