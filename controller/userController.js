@@ -67,36 +67,6 @@ const userController = {
 
         const user = await User.findByIdAndRemove(req.params.id);
 
-
-let transporter = nodemailer.createTransport({
-
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-  auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS
-  }
-});
-
-let mailOptions = {
-  from: '"InnoCentCoded"<wsappiah@gmail.com>',
-  to: 'appiahc86@gmail.com',
-  subject: 'Testing Email using Node.js',
-  html: `<h3 style="text-align: center; font-weight: bold; color: red;">Hello Innocent</h3>
-    <p>This user: ${user.email} was removed from the database</p>
-`
-};
-
-//Send email
-// transporter.sendMail(mailOptions, function(error, info){
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log('Email sent: ' + info.response);
-//   }
-// });
-
-
          res.redirect('/users')
     },
 
