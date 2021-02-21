@@ -103,6 +103,7 @@ const userController = {
                     done(err, token);
                 });
             },
+
             function(token, done) {
                 User.findOne({ email: req.body.email }, function(err, user) {
                     if (!user) {
@@ -118,6 +119,7 @@ const userController = {
                     });
                 });
             },
+
             function(token, user, done) {
                 let smtpTransport = nodemailer.createTransport({
                     // service: 'gmail',
